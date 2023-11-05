@@ -6,11 +6,12 @@ First ML Project attempting to predict next S&amp;P 500 index close
 * The target variable is the "Next Close", which we try to predict next day's close from the latest close data
 
 # Features Implemented
-* Simple Moving Averages from 3,5,7 and 20 days
-* Exponential Moving Averages from 9,12 and 26 days.
-* Bollinger Upper and Lower bands
-* Moving Average Convergence Divergence signals
-* Relative Strength Index
+* Simple Moving Averages from 3,5,7 and 20 days. SMA gives equal weight to the rolling days and thus captures longer trends and eliminates short-term noise. 
+* Exponential Moving Averages from 9,12 and 26 days. EMA gives more weight to recent data and is much quicker to react to short-term trends.
+* Bollinger Upper and Lower bands. These are computed by finding the 2 Standard Deviation range of SMA 20 days. When the price crosses the upper band, it is considered to be overbought. When the price crosses the lower band, it is considered to be oversold.
+* Moving Average Convergence Divergence signals. Divergence from the MACD can indicate potential reversals. MACD can also confirm volatility changes.
+* Relative Strength Index. By calculating the average 1-day returns over a 14 day period, RSI can help identify overbought and oversold conditions.
+* VIX. The Volatility Index is calculated by the implied volatility of S&P500 index options. VIX usually has an inverse relationship with the stock market and can help predict directional moves. 
 
 # Time Series Splitting
 Unlike a typical train test split with time-independent dataset, we have to implement time series splitting in order to test the model's performance against multiple folds. For the final model, we train it until Jan-01 2020 and test the model's performance every day afterward.
