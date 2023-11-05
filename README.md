@@ -19,7 +19,9 @@ Unlike a typical train test split with time-independent dataset, we have to impl
 We test model performance by Mean Absolute Error scores
 
 Linear Regression - 251
+
 Random Forest - 20.46
+
 XGBOOST - 11.49
 
 Random Forest/XGBOOST performed significantly better than Linear Regression and was used as the final model
