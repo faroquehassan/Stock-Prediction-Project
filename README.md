@@ -30,5 +30,11 @@ Random Forest/XGBOOST performed significantly better than Linear Regression and 
 # Parameter Tuning
 Tuned parameters: max_depth, learning_rate and min_child_weight and selected which combination had the lowest MAE
 
+# Using the Model
+1) Use Pipenv to install the included Piplock file
+2) Run train.py to generate the updated Model.bin trained on the latest data
+3) Build using Dockerfile by running "docker build -t model ." in the folder directory
+4) Run the model using "docker run -it --rm -p 8000:8000 model"
+5) Connect via http://localhost:8000/predict
 
 
